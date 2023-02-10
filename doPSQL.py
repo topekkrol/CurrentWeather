@@ -14,7 +14,7 @@ def do_Sql(plyk):
                             data VARCHAR(20),
                             opad REAL)'''
 
-    copy_value_test = f"copy pogoda (data,opad,dni_od_pomiary) FROM 'C:/Nowy_folder/{plyk}.csv' DELIMITER ',' ENCODING 'UTF8';"
+    copy_value = f"copy pogoda (data,opad) FROM 'C:/Nowy_folder/{plyk}.csv' DELIMITER ',' ENCODING 'UTF8';"
 
     try:
         conn = psycopg2.connect(
@@ -27,7 +27,7 @@ def do_Sql(plyk):
         cur = conn.cursor()
         # cur.execute(create_script_test)
 
-        cur.execute(copy_value_test)
+        cur.execute(copy_value)
 
         conn.commit()
 

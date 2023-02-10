@@ -1,5 +1,6 @@
 from datetime import datetime
 import pandas as pd
+import csv
 
 paczucha ={}
 
@@ -14,7 +15,10 @@ def dzis():
     data = str(miesiac)+dzis
     return  data
 
-def do_csv(srednia):
+def do_csv(suma,plyk):
 
-    new_line_df = pd.DataFrame({dzis():srednia}, index=[dzis()])
-    new_line_df.to_csv(f'C:/Nowy_folder/current.csv', index=True, header=False, quotechar=' ')
+    new_line_df = pd.DataFrame({dzis():suma}, index=[dzis()])
+    new_line_df.to_csv(f'C:/Nowy_folder/{plyk}.csv', index=True, header=False, quotechar=' ')
+
+
+
